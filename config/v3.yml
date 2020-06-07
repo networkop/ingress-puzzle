@@ -1,0 +1,8 @@
+controller:
+  scope:
+    enabled: true
+  admissionWebhooks:
+    enabled: false
+rbac:
+  scope:
+    enabled: true

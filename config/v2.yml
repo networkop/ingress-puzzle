@@ -1,0 +1,8 @@
+controller:
+  publishService:
+    enabled: false
+    pathOverride: "two/svc"
+  scope:
+    enabled: false
+  admissionWebhooks:
+    enabled: false
