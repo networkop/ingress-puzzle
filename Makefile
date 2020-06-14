@@ -20,8 +20,11 @@ namespaces:
 ## 3. Install load-balancer
 load-balancer: lb-base lb-config
 
+repo-ensure:
+	helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx &>/dev/null
+
 ## 4. Install 3 ingress controllers
-controllers:
+controllers: helm-ensure repo-ensure
 	helm install ingress ingress-nginx/ingress-nginx --namespace one -f ./config/v1.yml &>/dev/null
 	helm install ingress ingress-nginx/ingress-nginx --namespace two -f ./config/v2.yml &>/dev/null
 	helm install ingress ingress-nginx/ingress-nginx --namespace three -f ./config/v3.yml &>/dev/null
